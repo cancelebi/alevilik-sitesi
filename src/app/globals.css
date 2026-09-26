@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #182620;
+  --color-ink-2: #20342b;
+  --color-parchment: #EFE6D8;
+  --color-parchment-2: #E6DAC6;
+  --color-copper: #B5652D;
+  --color-copper-bright: #D97F3F;
+  --color-bordo: #6B1F2A;
+  --color-gold: #C9A227;
+
+  --color-light: #F4EFE4;
+  --color-light-dim: #C9C2B3;
+  --color-dark: #241A12;
+  --color-dark-dim: #5B5142;
+  
+  --color-line-light: rgba(244, 239, 228, 0.14);
+  --color-line-dark: rgba(36, 26, 18, 0.14);
+  
+  --font-sans: var(--font-inter), sans-serif;
+  --font-serif: var(--font-fraunces), serif;
+  --font-mono: var(--font-jetbrains), monospace;
+}
+
+@layer utilities {
+  .eyebrow {
+    @apply font-mono text-xs tracking-[0.14em] uppercase text-copper flex items-center gap-2.5;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply w-4 h-px bg-copper inline-block;
+  }
+}
+
+@layer base {
+  .tiptap p { @apply mb-4; }
+  .tiptap b, .tiptap strong { @apply font-bold text-bordo; }
+  .tiptap i, .tiptap em { @apply italic; }
+  .tiptap u { @apply underline; }
+  .tiptap h2 { @apply text-2xl font-serif font-semibold mt-8 mb-4 text-bordo; }
+  .tiptap h3 { @apply text-xl font-serif font-semibold mt-6 mb-3 text-bordo; }
+  .tiptap ul { @apply list-disc pl-6 mb-4 space-y-2; }
+  .tiptap ol { @apply list-decimal pl-6 mb-4 space-y-2; }
+  .tiptap blockquote { @apply border-l-4 border-copper pl-4 italic text-dark-dim my-4 bg-parchment p-3 rounded-r; }
+  .tiptap a { @apply text-copper underline hover:text-copper-bright cursor-pointer; }
+  .tiptap img { @apply max-w-full h-auto rounded my-4; }
+  .tiptap p[style*="text-align: center"] { @apply text-center; }
+}
