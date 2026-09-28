@@ -1,4 +1,3 @@
-export const runtime = 'edge';
 import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Metadata } from "next";
@@ -39,4 +38,5 @@ export default function RootLayout({
     </html>
   );
 }
+
 
